@@ -5,8 +5,8 @@ char_table <- read_csv(here::here("char_map.csv"))
 
 # message to plot
 msg <- list(
-  frame1 = c("Complex Human Data","Summer School"),
-  frame2 = c("Melbourne 2018", "December 9-14")
+  frame1 = c("Summer School:", "Complex Human Data"),
+  frame2 = c("Melbourne, Australia", "Dec 9-14, 2018")
 )
 
 # convert the message to a tidy form
@@ -37,4 +37,8 @@ msg_map <- left_join(msg_frame, char_table) %>%
   filter(value == 1)
 
 write_csv(msg_map, here::here("msg_map.csv"))
+
+msg_map %>% group_by(frame) %>% 
+  summarise(count = n()) %>% print()
+
 
