@@ -1,5 +1,4 @@
 library(tidyverse)
-library(broom)
 
 # take a vector of inputs and return a binary 
 # matrix corresponding to the character
