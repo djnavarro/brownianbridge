@@ -108,8 +108,8 @@ if(!anim) {
   
   # create animation
   pic %>% animate(
-    nframes = 200, fps = 20, width = 800, height = 500)
-  anim_save(here::here("bridge_animation.gif"))
+    nframes = 200, fps = 20, width = 800, height = 250)
+  anim_save(here::here("bridge_animation_b.gif"))
 }
 
 
