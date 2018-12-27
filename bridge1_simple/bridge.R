@@ -1,3 +1,4 @@
+library(here)
 library(tidyverse)
 library(e1071)
 library(gganimate)
@@ -22,17 +23,12 @@ pic <- tbl %>%
     colour = Series)) + 
   geom_point(show.legend = FALSE,
              size = 5, alpha = .6) + 
-  theme(axis.title.x=element_blank(),
-        axis.text.x=element_blank(),
-        axis.ticks.x=element_blank()) +
-  theme(axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()) +
+  theme_void() +
   transition_time(time = Time)  +
   ease_aes('linear') + 
   shadow_wake(.1)
   
   
 # create
-pic %>% animate(nframes = 500, fps = 20)
-anim_save("~/Desktop/bridge.gif")
+pic %>% animate(nframes = 200, detail = 5, type = "cairo")
+anim_save(here("bridge1_simple", "bridge.gif"))
