@@ -1,3 +1,4 @@
+library(here)
 library(tidyverse)
 library(e1071)
 library(gganimate)
@@ -180,5 +181,5 @@ pic %>% animate(
   nframes = 500, fps = 15, width = 800, 
   bg = background, detail = 3
 )
-anim_save("~/Desktop/bridge.gif")
+anim_save(here("bridge4_eels", "bridge-of-eels.gif"))
 
